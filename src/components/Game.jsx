@@ -7,7 +7,7 @@ export function Card (props) {
         <div className="card-container" onTouchEnd={props.handleClick}>
             <div className={`card ${(props.info.completed || props.info.flip) ? 'flip' : ''}`}>
                 <div className="card-front bg-red-200">
-                    <img src={props.info.front} alt="xiaoxin2" />
+                    <img src={`${import.meta.env.BASE_URL}${props.info.front}`} alt="xiaoxin2" />
                 </div>
                 <div className="card-back bg-red-200">{props.info.back}</div>
             </div>
@@ -18,73 +18,73 @@ export function Card (props) {
 let currentIndex, lastIndex
 let cardList = [
     {
-        front: '/images/xiaoxin2.jpeg',
+        front: 'images/xiaoxin2.jpeg',
         back: '祝',
         flip: false,
         value: 0,
         completed: false
     }, {
-        front: '/images/xiaoxin2.jpeg',
+        front: 'images/xiaoxin2.jpeg',
         back: '祝',
         flip: false,
         value: 0,
         completed: false
     }, {
-        front: '/images/xiaoxin2.jpeg',
+        front: 'images/xiaoxin2.jpeg',
         back: '你',
         flip: false,
         value: 1,
         completed: false
     }, {
-        front: '/images/xiaoxin2.jpeg',
+        front: 'images/xiaoxin2.jpeg',
         back: '你',
         flip: false,
         value: 1,
         completed: false
     }, {
-        front: '/images/xiaoxin2.jpeg',
+        front: 'images/xiaoxin2.jpeg',
         back: '生',
         flip: false,
         value: 2,
         completed: false
     }, {
-        front: '/images/xiaoxin2.jpeg',
+        front: 'images/xiaoxin2.jpeg',
         back: '生',
         flip: false,
         value: 2,
         completed: false
     }, {
-        front: '/images/xiaoxin2.jpeg',
+        front: 'images/xiaoxin2.jpeg',
         back: '日',
         flip: false,
         value: 3,
         completed: false
     }, {
-        front: '/images/xiaoxin2.jpeg',
+        front: 'images/xiaoxin2.jpeg',
         back: '日',
         flip: false,
         value: 3,
         completed: false
     }, {
-        front: '/images/xiaoxin2.jpeg',
+        front: 'images/xiaoxin2.jpeg',
         back: '快',
         flip: false,
         value: 4,
         completed: false
     }, {
-        front: '/images/xiaoxin2.jpeg',
+        front: 'images/xiaoxin2.jpeg',
         back: '快',
         flip: false,
         value: 4,
         completed: false
     }, {
-        front: '/images/xiaoxin2.jpeg',
+        front: 'images/xiaoxin2.jpeg',
         back: '乐',
         flip: false,
         value: 5,
         completed: false
     }, {
-        front: '/images/xiaoxin2.jpeg',
+        front: 'images/xiaoxin2.jpeg',
         back: '乐',
         flip: false,
         value: 5,
