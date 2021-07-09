@@ -6,8 +6,10 @@ export function Card (props) {
     return (
         <div className="card-container" onTouchEnd={props.handleClick}>
             <div className={`card ${(props.info.completed || props.info.flip) ? 'flip' : ''}`}>
-                <div className="card-front bg-react">{props.info.front}</div>
-                <div className="card-back bg-green-300">{props.info.back}</div>
+                <div className="card-front bg-red-200">
+                    <img src={props.info.front} alt="xiaoxin2" />
+                </div>
+                <div className="card-back bg-red-200">{props.info.back}</div>
             </div>
         </div>
     )
@@ -16,73 +18,73 @@ export function Card (props) {
 let currentIndex, lastIndex
 let cardList = [
     {
-        front: '1',
+        front: '/images/xiaoxin2.jpeg',
         back: '祝',
         flip: false,
         value: 0,
         completed: false
     }, {
-        front: '2',
+        front: '/images/xiaoxin2.jpeg',
         back: '祝',
         flip: false,
         value: 0,
         completed: false
     }, {
-        front: '3',
+        front: '/images/xiaoxin2.jpeg',
         back: '你',
         flip: false,
         value: 1,
         completed: false
     }, {
-        front: '4',
+        front: '/images/xiaoxin2.jpeg',
         back: '你',
         flip: false,
         value: 1,
         completed: false
     }, {
-        front: '5',
+        front: '/images/xiaoxin2.jpeg',
         back: '生',
         flip: false,
         value: 2,
         completed: false
     }, {
-        front: '6',
+        front: '/images/xiaoxin2.jpeg',
         back: '生',
         flip: false,
         value: 2,
         completed: false
     }, {
-        front: '7',
+        front: '/images/xiaoxin2.jpeg',
         back: '日',
         flip: false,
         value: 3,
         completed: false
     }, {
-        front: '8',
+        front: '/images/xiaoxin2.jpeg',
         back: '日',
         flip: false,
         value: 3,
         completed: false
     }, {
-        front: '9',
+        front: '/images/xiaoxin2.jpeg',
         back: '快',
         flip: false,
         value: 4,
         completed: false
     }, {
-        front: '10',
+        front: '/images/xiaoxin2.jpeg',
         back: '快',
         flip: false,
         value: 4,
         completed: false
     }, {
-        front: '11',
+        front: '/images/xiaoxin2.jpeg',
         back: '乐',
         flip: false,
         value: 5,
         completed: false
     }, {
-        front: '12',
+        front: '/images/xiaoxin2.jpeg',
         back: '乐',
         flip: false,
         value: 5,
@@ -113,6 +115,7 @@ export function Game () {
 
     function handleClick (index) {
         // list[index].flip = true
+        if (currentIndex === index) return
         currentIndex = index
         if (lastIndex != null && list[currentIndex].value === list[lastIndex].value) {
             list[currentIndex].completed = true
@@ -150,7 +153,7 @@ export function Game () {
     return (
         <div className="p-4">
             <header className="flex justify-between">
-                <div className="text-xl">来玩游戏吧</div>
+                <div className="text-xl font-bold">来玩游戏吧</div>
                 <div>
                     <button onTouchEnd={ restart }>重玩</button>
                 </div>

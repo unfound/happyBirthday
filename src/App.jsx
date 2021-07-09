@@ -3,7 +3,7 @@ import Router from './router/router'
 
 const App = () => {
   return (
-    <div className="text-center container mx-auto text-white">
+    <div className="text-center container mx-auto">
         <Router />
     </div>
   );

@@ -55,10 +55,16 @@ input {
     height: 100%;
     width: 100%;
     border-radius: 4px;
+    overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
     backface-visibility: hidden;
+}
+
+.card-back img, .card-front img {
+    height: 100%;
+    width: 100%;
 }
 
 .card-front {
@@ -66,6 +72,7 @@ input {
 }
 
 .card-back {
+    font-size: 36px;
     transform: rotateY(-180deg);
 }
 
@@ -127,7 +134,7 @@ input {
 
 .modal-content {
     position: relative;
-    background-color: #fff;
+    background-color: rgba(255, 251, 235, 1);
     background-clip: padding-box;
     border: 0;
     border-radius: 4px;
@@ -144,14 +151,14 @@ input {
 }
 
 .modal-footer {
-    padding: 8px 24px;
+    padding: 0 24px 16px;
     text-align: center;
 }
 
 button {
-    color: #fff;
-    background: #1890ff;
-    border-color: #1890ff;
+    color: #f3f4f6;
+    background: #818cf8;
+    border-color: #818cf8;
     text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
     box-shadow: 0 2px #0000000b;
     line-height: 1.5715;
@@ -171,7 +178,7 @@ button {
     user-select: none;
     touch-action: manipulation;
     height: 32px;
-    padding: 4px 15px;
+    padding: 4px 16px;
     font-size: 14px;
     border-radius: 2px;
 }
@@ -179,16 +186,16 @@ button {
 button:active {
     outline: 0;
     box-shadow: none;
-    color: #fff;
-    background: #096dd9;
-    border-color: #096dd9;
+    color: #f3f4f6;
+    background: #6366f1;
+    border-color: #6366f1;
 }
 
 button:focus, button:hover {
     outline: 0;
-    color: #fff;
-    background: #40a9ff;
-    border-color: #40a9ff;
+    color: #f3f4f6;
+    background: #6366f1;
+    border-color: #6366f1;
     text-decoration: none;
 }
 
