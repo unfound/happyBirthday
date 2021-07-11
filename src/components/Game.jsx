@@ -1,6 +1,8 @@
 import React from 'react'
 import { Modal } from './Modal.jsx'
 
+const APlayer  = React.lazy(() => import('./APlayer'))
+
 export function Card (props) {
     console.log('Card rander!')
     return (
@@ -167,6 +169,9 @@ export function Game () {
                 }
             </div>
             <Modal visibled={ visibled } onClose={ handleClose }/>
+            <React.Suspense fallback={ <div>加载中……</div> }>
+                <APlayer />
+            </React.Suspense>
         </div>
     )
 }
