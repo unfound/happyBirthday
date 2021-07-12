@@ -10,6 +10,9 @@ export default ({ mode }) => {
   }
   return defineConfig({
     plugins: [reactRefresh()],
-    base: '/happyBirthdayForYou/'
+    base: '/happyBirthdayForYou/',
+    build: {
+      outDir: 'happyBirthdayForYou'
+    }
   })
 }

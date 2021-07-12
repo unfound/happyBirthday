@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@property --houdini-colorA {
+/* @property --houdini-colorA {
     syntax: '<color>';
     inherits: false;
     initial-value: #fff;
@@ -22,7 +22,7 @@
 .property:hover {
     --houdini-colorA: yellowgreen;
     --houdini-colorB: deeppink;
-}
+} */
 
 input {
     color: #000;
@@ -37,13 +37,14 @@ input {
 .card-container {
     perspective: 1000;
     transform-style: preserve-3d;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
 .card {
-    height: 100px;
-    line-height: 100px;
-    width: 100px;
+    --card-width: 28vw;
+    height: var(--card-width);
+    line-height: var(--card-width);
+    width: var(--card-width);
     border-radius: 4px;
     position: relative;
     transition: 1s;
@@ -98,13 +99,13 @@ input {
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 9999;
     height: 100%;
     background-color: #00000073;
 }
 
 .modal-wrap {
-    z-index: 1000;
+    z-index: 10000;
     position: fixed;
     top: 0;
     right: 0;

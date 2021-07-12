@@ -4,7 +4,6 @@ import { Modal } from './Modal.jsx'
 const APlayer  = React.lazy(() => import('./APlayer'))
 
 export function Card (props) {
-    console.log('Card rander!')
     return (
         <div className="card-container" onTouchEnd={props.handleClick}>
             <div className={`card ${(props.info.completed || props.info.flip) ? 'flip' : ''}`}>
@@ -132,7 +131,6 @@ export function Game () {
             }
             return item
         })
-        console.log(currentIndex, lastIndex)
         lastIndex = currentIndex
         setList(list)
         checkIsCompleted(list)
@@ -140,7 +138,6 @@ export function Game () {
 
     function checkIsCompleted (list) {
         let isCompleted = list.every(item => item.completed)
-        console.log(isCompleted)
         isCompleted && setVisibled(true)
     }
 
@@ -151,7 +148,6 @@ export function Game () {
     function restart () {
         setList(shuffle(cardList))
     }
-    console.log('Game rander!')
     return (
         <div className="p-4">
             <header className="flex justify-between">
@@ -160,7 +156,7 @@ export function Game () {
                     <button onTouchEnd={ restart }>重玩</button>
                 </div>
             </header>
-            <p className="text-left my-2">每次只能翻开一张卡片，翻到两张相同的图片则会匹配成功，当所有卡片匹配成功，则游戏完成，解锁彩蛋。</p>
+            <p className="text-left text-sm my-2">每次只能翻开一张卡片，翻到两张相同的字符则会匹配成功，当所有卡片匹配成功，则游戏完成，解锁彩蛋。</p>
             <div className="game-container">
                 {
                     list.map((item, i) => {
@@ -170,7 +166,7 @@ export function Game () {
             </div>
             <Modal visibled={ visibled } onClose={ handleClose }/>
             <React.Suspense fallback={ <div>加载中……</div> }>
-                <APlayer />
+                <APlayer isStop={ visibled }/>
             </React.Suspense>
         </div>
     )
