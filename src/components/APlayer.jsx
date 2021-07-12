@@ -27,17 +27,18 @@ export default function APlayer (props) {
 
     return () => {
       ap.destroy()
+      ap = null
     }
   }, [])
 
-  React.useEffect(() => {
-    if (!ap) return
-    if (props.isStop) {
-      ap.pause()
-    } else {
-      ap.play()
-    }
-  }, [props.isStop])
+  // React.useEffect(() => {
+  //   if (!ap) return
+  //   if (props.isStop) {
+  //     ap.pause()
+  //   } else {
+  //     ap.play()
+  //   }
+  // }, [props.isStop])
 
   return <div ref={ container }></div>
 }
